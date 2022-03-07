@@ -56,7 +56,7 @@ import { Layout, TextField, rules, useTextField, Button, SearchIcon, DatePicker,
 
 export default () => {
   const [value, setValue] = React.useState(null)
-  const [time, setTime] = React.useState(null)
+  const [time, setTime] = React.useState({})
 
   const handleChange = (event) => {
     setValue(event)
@@ -79,7 +79,7 @@ export default () => {
     label:'时间',
     size:'small',
     onChange: (value) => {
-      setTime(value)
+      setTime({})
     },
     sx:{
       width: 100,

@@ -16,51 +16,27 @@ group:
  * desc: 基本使用
  */
 import * as React from 'react';
-import { Autocomplete } from '@mui/material'
-import { Layout, rules, Button, SearchIcon, TextField, useInput} from 'fbm-ui'
+import { Demo, Autocomplete } from 'fbm-ui'
 
 export default () => {
-
   const top100Films = [
-    { label: 'The Shawshank Redemption', year: 1994 },
-    { label: 'The Godfather', year: 1972 },
+    { label: 'An', year: 1994 },
+    { label: 'Bn', year: 1972 },
     { label: 'The Godfather: Part II', year: 1974 },
     { label: 'The Dark Knight', year: 2008 },
     { label: '12 Angry Men', year: 1957 },
     { label: "Schindler's List", year: 1993 },
     { label: 'Pulp Fiction', year: 1994 },
   ];
-
-  // const { 
-  //   error,
-  //   value,
-  //   setValue,
-  // } = useInput({
-  //   value,
-  //   rules: [{ required: true }]
-  // })
-
-  const handleSubmit = () => {
-  }
-
+  
   return (
-    <Layout>
+    <Demo>
       <Autocomplete
-        multiple={true}
+        multiple
+        limitTags={1}
         options={top100Films}
-        onChange={(_, newValue) => {
-        }}
-
-        renderInput={(params) => {
-          return (
-            <TextField 
-              {...params}
-            />
-          )
-        }}
       />
-      <Button onClick={handleSubmit}> 提交 </Button> 
-    </Layout>
+    </Demo>
   )
 }
 
